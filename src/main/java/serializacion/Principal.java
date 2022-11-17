@@ -26,7 +26,7 @@ public class Principal {
     private static Double nota = null;
     public static void main(String[] args) throws IOException, FileNotFoundException, ClassNotFoundException {
         Scanner sc = new Scanner(System.in);
-        File f = new File("notasSerializable.dat");
+        File f = new File("notasSerializable.obj");
         Curso curso =  null;
         
         int opcion = menu(sc);
@@ -78,6 +78,8 @@ public class Principal {
             
         }
     }
+    
+    
 
     private static void escribir(File f, Scanner sc, Curso curso) throws FileNotFoundException, IOException {
 
@@ -92,7 +94,19 @@ public class Principal {
         
         
         System.out.println("Introduce nota");
+        
         nota = sc.nextDouble();
+        
+        while((nota < 0) || (nota > 10)){
+            
+             if ((nota < 0) || (nota > 10)) {
+                System.out.println("introduce nota correcta");
+ 
+            }
+             nota = sc.nextDouble();
+        }
+       
+       
                 
         
         
